@@ -1,11 +1,19 @@
+import 'package:dailyfood/features/start_page/page/welcome.dart';
+import 'package:dailyfood/features/userauth/page/sign_in.dart';
+import 'package:dailyfood/routes/routes.dart';
+import 'package:dailyfood/service/navigation_service.dart';
 import 'package:dailyfood/utils/kcolor.dart';
 import 'package:flutter/material.dart';
-
-
-
-
+import 'package:flutter/services.dart';
 
 void main() {
+  // change statusbar color 
+  SystemChrome.setSystemUIOverlayStyle( 
+   const SystemUiOverlayStyle(
+      statusBarColor: Kcolor.bgColor, 
+      statusBarIconBrightness: Brightness.dark // set status bar icon dartk
+    )
+  ); 
   runApp(const MyApp());
 }
 
@@ -17,37 +25,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Kcolor.bgColor
       ),
-      home:  Test(),
-    );
-  }
-}
-
-class Test extends StatelessWidget {
-  const Test({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width; 
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-
-        children: [
-          Container(  
-            height: 48.0,
-            width: width,
-            alignment: Alignment.center,
-            decoration:  BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color:Kcolor.active1, 
-            ),
-            child: Text("sign in" , style: const TextStyle(color:Kcolor.bgColor,fontSize: 14.0, fontWeight: FontWeight.bold, letterSpacing: .8),)
-          )
-        ],
-      ),
+      // home: Welcome(),
+      home: SignIn(),
+      // initialRoute: RouteGenerator.welcome,
+      onGenerateRoute: RouteGenerator.generateRoute ,
+      navigatorKey: NavigationService.navigatorKey,
     );
   }
 }
