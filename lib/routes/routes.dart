@@ -2,6 +2,8 @@ import 'package:dailyfood/features/start_page/page/walkthroug1.dart';
 import 'package:dailyfood/features/start_page/page/walkthroug2.dart';
 import 'package:dailyfood/features/start_page/page/walkthroug4.dart';
 import 'package:dailyfood/features/start_page/page/welcome.dart';
+import 'package:dailyfood/features/userauth/page/sign_in.dart';
+import 'package:dailyfood/features/userauth/page/sign_up.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
@@ -9,6 +11,8 @@ class RouteGenerator {
   static const String walkthrough1 = "walkthrough1";
   static const String walkthrough2 = "walkthrough2";
   static const String walkthrough3 = "walkthrough3";
+  static const String signIn = "signIn";
+  static const String signUp = "signUp";
 
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -23,6 +27,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) =>const Walkthrough4());
       case "/welcome":
         return MaterialPageRoute(builder: (_) => Container());
+      case "signIn":
+        return MaterialPageRoute(builder: (_) => SignIn());
+      case "signUp":
+        return MaterialPageRoute(builder: (_) => SignUp());
       default:
         return MaterialPageRoute(
           builder: (_) => Container(),

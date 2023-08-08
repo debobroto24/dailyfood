@@ -1,3 +1,4 @@
+import 'package:dailyfood/features/main_screen.dart';
 import 'package:dailyfood/features/start_page/page/welcome.dart';
 import 'package:dailyfood/features/userauth/page/sign_in.dart';
 import 'package:dailyfood/routes/routes.dart';
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Kcolor.bgColor
       ),
       // home: Welcome(),
-      home: SignIn(),
+      // home: SignIn( ),
+      home: MainScreen(),
       // initialRoute: RouteGenerator.welcome,
       onGenerateRoute: RouteGenerator.generateRoute ,
       navigatorKey: NavigationService.navigatorKey,

@@ -28,6 +28,20 @@ class KtextStyls {
     color: Kcolor.bodyText,
     letterSpacing: -0.4,
   );
+  static const TextStyle subTitle3 = TextStyle(
+    fontSize: 16,
+    fontFamily: 'yugothib',
+    fontWeight: FontWeight.normal,
+    color: Kcolor.accent,
+    letterSpacing: -0.4,
+  );
+  static const TextStyle subTitle4 = TextStyle(
+    fontSize: 12,
+    fontFamily: 'yugothib',
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+   
+  );
   static const TextStyle subTitle1 = TextStyle(
     fontSize: 18,
     fontFamily: 'yugothib',

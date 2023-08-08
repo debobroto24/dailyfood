@@ -10,33 +10,48 @@ import 'package:dailyfood/utils/styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatelessWidget {
-  SignIn({super.key});
+class SignUp extends StatelessWidget {
+  SignUp({super.key});
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+  TextEditingController nameContoller = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Kcolor.bgColor,
+        backgroundColor: Kcolor.bgColor,
         appBar: PreferredSize(
             preferredSize: const Size.fromHeight(70),
-            child: KappBar(text: "sign in")),
+            child: KappBar(text: "sign up")),
         body: SingleChildScrollView(
             child: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
-              const Text("Welcome to dailyfood food service",
-                  style: KtextStyls.headLine2),
-              const Text(
-                  "Enter your phone number and email addresss for signin enaoy your food :)",
-                  style: KtextStyls.subTitle2),
+              const Text("Create Account", style: KtextStyls.headLine2),
+              RichText(
+                  text:  TextSpan(children: [
+                const TextSpan(
+                    text: "Enter your name email and passowrd for sign in",
+                    style: KtextStyls.subTitle2),
+                TextSpan(
+                    text: " Alwready have an account?", style: KtextStyls.subTitle3, 
+                    
+                    recognizer: TapGestureRecognizer()..onTap = (){
+                      Navigator.of(context).pushNamed(RouteGenerator.signIn);
+                    }, 
+                    )
+              ])),
               const SizedBox(height: 20),
               Form(
                 key: formKey,
                 child: Column(
                   children: [
+                    LabelText(text: "Enter your Name", icon: Icons.join_right),
+                     CustomTextFormField(
+                      controller: nameContoller,
+                      hintText:  "jay kalkar",
+                    ),
                     LabelText(text: "Enter your email", icon: Icons.join_right),
                     CustomTextFormField(
                       controller: emailController,
@@ -47,19 +62,6 @@ class SignIn extends StatelessWidget {
                     PasswordFormField(controller: passController),
                     const SizedBox(height: 20),
                     KTextButton(text: "Sign In", onPressed: () {}),
-                    RichText(
-                  text:  TextSpan(children: [
-                const TextSpan(
-                    text: "Don't have any account? go to ",
-                    style: KtextStyls.subTitle2),
-                TextSpan(
-                    text: " Sign up", style: KtextStyls.subTitle3, 
-                    
-                    recognizer: TapGestureRecognizer()..onTap = (){
-                      Navigator.of(context).pushNamed(RouteGenerator.signUp);
-                    }, 
-                    )
-              ])),
                     const SizedBox(height: 20),
                     const Text(
                       "or",
