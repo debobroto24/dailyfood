@@ -1,3 +1,5 @@
+import 'package:dailyfood/features/home/page/home_page.dart';
+import 'package:dailyfood/features/home/page/show_restaurents.dart';
 import 'package:dailyfood/features/start_page/page/walkthroug1.dart';
 import 'package:dailyfood/features/start_page/page/walkthroug2.dart';
 import 'package:dailyfood/features/start_page/page/walkthroug4.dart';
@@ -13,6 +15,9 @@ class RouteGenerator {
   static const String walkthrough3 = "walkthrough3";
   static const String signIn = "signIn";
   static const String signUp = "signUp";
+  static const String homePage = "homepage";
+  static const String showRestaurents = "showrestaurents";
+
 
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -31,6 +36,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => SignIn());
       case "signUp":
         return MaterialPageRoute(builder: (_) => SignUp());
+      case "homepage":
+        return MaterialPageRoute(builder: (_) => HomePage());
+      case "showrestaurents":
+        return MaterialPageRoute(builder: (_) => ShowRestaurents());
       default:
         return MaterialPageRoute(
           builder: (_) => Container(),

@@ -1,3 +1,4 @@
+import 'package:dailyfood/features/common_widgets/circle_with_text.dart';
 import 'package:dailyfood/utils/kcolor.dart';
 import 'package:dailyfood/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -33,15 +34,15 @@ class AllRestaurentList extends StatelessWidget {
                 const SizedBox(height: 10),
                 Row(
                   children: [
-                    circleWithText(),
+                    CircleWithText(),
                     const SizedBox(
                       width: 20,
                     ),
-                    circleWithText(),
+                    CircleWithText(),
                     const SizedBox(
                       width: 20,
                     ),
-                    circleWithText(),
+                    CircleWithText(),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -84,24 +85,5 @@ class AllRestaurentList extends StatelessWidget {
     );
   }
 
-  Row circleWithText() {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          height: 5,
-          width: 5,
-          decoration: BoxDecoration(
-            color: Kcolor.bodyText,
-            borderRadius: BorderRadius.circular(5),
-          ),
-        ),
-        const SizedBox(width: 5),
-        const Text(
-          "chines",
-          style: KtextStyls.subTitle2,
-        )
-      ],
-    );
-  }
 }
+

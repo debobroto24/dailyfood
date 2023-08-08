@@ -1,3 +1,4 @@
+import 'package:dailyfood/features/home/widget/star_container.dart';
 import 'package:dailyfood/utils/kcolor.dart';
 import 'package:dailyfood/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -39,17 +40,7 @@ class SingleRestaurentCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                width: 30,
-                height: 20,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Kcolor.accent,
-                ),
-                child: const Text("4.5",
-                    style: KtextStyls.subTitle4),
-              ),
+              StarContainer(text:"4.5"),
              const  SizedBox(width: 20),
               const Text("25 min", style: KtextStyls.subTitle2),
               const  SizedBox(width: 20),
@@ -61,3 +52,5 @@ class SingleRestaurentCard extends StatelessWidget {
     );
   }
 }
+
+

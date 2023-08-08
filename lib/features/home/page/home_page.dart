@@ -1,6 +1,7 @@
 import 'package:dailyfood/features/home/widget/all_restaurent_list.dart';
 import 'package:dailyfood/features/home/widget/restaurent_list_slider.dart';
 import 'package:dailyfood/features/home/widget/signle_restaurent_card.dart';
+import 'package:dailyfood/routes/routes.dart';
 import 'package:dailyfood/utils/kcolor.dart';
 import 'package:dailyfood/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,9 @@ class _HomePageState extends State<HomePage> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              CategoryHeader(header: "Features Partnar", onPressed: () {}),
+              CategoryHeader(header: "Features Partnar", onPressed: () {
+                Navigator.of(context).pushNamed(RouteGenerator.showRestaurents);
+              }),
               RestaurentListSlider(),
               const SizedBox(height: 30),
               CategoryHeader(
